@@ -18,7 +18,7 @@ def traverse_csv(filename):
                 #geocoding coordinates
                 print('*' * 100)
                 print('geocoding row:' + str(row_counter))
-                row.append(rev_geocode(row[4],row[5]))
+                row.append(rev_geocode(row[4],row[5])) # adds a reversed geocoded address to the temporary row
                 #Test Output
                 print('Output:')
                 print('Latitude:' + str(row[4]))
@@ -26,11 +26,11 @@ def traverse_csv(filename):
                 print(row)
                 #Writing Data
                 print('Writing Data')
-                csv_writer.writerow(row)
+                csv_writer.writerow(row) # Edits the given csv file with the added row containing the reverse geocoded address
                 #Row Done :)
-                if row_counter == 400:
+                if row_counter == 400: # current limitation of the script, can be deleted to remove limitation
                     print('Sequence Complete')
-                    return
+                    return # Exits the current function after the limitation has been met
                 row_counter = row_counter + 1
                 print('Done row:' + str(row_counter))
                 print('*' * 100)
